@@ -39,7 +39,6 @@ class Parametrizer {
    public:
     Parametrizer() {}
     // Mesh Initialization
-    void Load(const char* filename);
     void NormalizeMesh();
     void ComputeMeshStatus();
     void ComputeSmoothNormal();

@@ -15,7 +15,7 @@ namespace qflow {
 inline int dedge_prev(int e, int deg) { return (e % deg == 0u) ? e + (deg - 1) : e - 1; }
 
 inline bool atomicCompareAndExchange(volatile int* v, uint32_t newValue, int oldValue) {
-#if defined(_WIN32)
+#if defined(_WIN32) && !defined(IS_NOMAD)
     return _InterlockedCompareExchange(reinterpret_cast<volatile long*>(v), (long)newValue,
                                        (long)oldValue) == (long)oldValue;
 #else

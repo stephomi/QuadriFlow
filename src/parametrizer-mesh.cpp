@@ -1,7 +1,6 @@
 #include "config.hpp"
 #include "dedge.hpp"
 #include "field-math.hpp"
-#include "loader.hpp"
 #include "merge-vertex.hpp"
 #include "parametrizer.hpp"
 #include "subdivide.hpp"
@@ -37,11 +36,6 @@ void Parametrizer::NormalizeMesh() {
     this->normalize_scale = scale;
     this->normalize_offset = Vector3d(0.5 * (maxV[0] + minV[0]), 0.5 * (maxV[1] + minV[1]), 0.5 * (maxV[2] + minV[2]));
     //    merge_close(V, F, 1e-6);
-}
-
-void Parametrizer::Load(const char* filename) {
-    load(filename, V, F);
-    NormalizeMesh();
 }
 
 void Parametrizer::Initialize(int faces) {

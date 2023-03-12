@@ -638,14 +638,14 @@ void Hierarchy::DownsampleEdgeGraph(std::vector<Vector3i>& FQ, std::vector<Vecto
 }
 
 int Hierarchy::FixFlipSat(int depth, int threshold) {
-    if (system("which minisat > /dev/null 2>&1")) {
-        printf("minisat not found, \"-sat\" will not be used!\n");
-        return 0;
-    }
-    if (system("which timeout > /dev/null 2>&1")) {
-        printf("timeout not found, \"-sat\" will not be used!\n");
-        return 0;
-    }
+    // if (system("which minisat > /dev/null 2>&1")) {
+    //     printf("minisat not found, \"-sat\" will not be used!\n");
+    //     return 0;
+    // }
+    // if (system("which timeout > /dev/null 2>&1")) {
+    //     printf("timeout not found, \"-sat\" will not be used!\n");
+    //     return 0;
+    // }
 
     auto& F2E = mF2E[depth];
     auto& E2F = mE2F[depth];

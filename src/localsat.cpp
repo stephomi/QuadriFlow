@@ -33,12 +33,13 @@ SolverStatus RunCNF(const std::string &fin_name, int n_variable, int timeout,
     }
     fclose(fout);
 
-    char cmd[100];
-    snprintf(cmd, 99, "rm %s > /dev/null 2>&1", fout_name.c_str());
-    system(cmd);
-    snprintf(cmd, 99, "timeout %d minisat %s %s > /dev/null 2>&1", timeout, fin_name.c_str(),
-             fout_name.c_str());
-    int exit_code = system(cmd);
+    // char cmd[100];
+    // snprintf(cmd, 99, "rm %s > /dev/null 2>&1", fout_name.c_str());
+    // system(cmd);
+    // snprintf(cmd, 99, "timeout %d minisat %s %s > /dev/null 2>&1", timeout, fin_name.c_str(),
+    //          fout_name.c_str());
+    // int exit_code = system(cmd);
+    int exit_code = 0;
 
     FILE *fin = fopen(fout_name.c_str(), "r");
     char buf[16] = {0};
